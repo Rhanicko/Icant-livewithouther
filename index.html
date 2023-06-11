@@ -2,69 +2,71 @@
 <html>
 <head>
   <title>Monke</title>
+  <!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #818589;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      height: 100vh;
+    body, html {
+      height: 100%;
       margin: 0;
+      overflow: hidden;
     }
-
-    .bigfont {
-      font-size: 120px;
+    
+    #main {
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
-
+    
     .image {
-      margin-top: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
     }
-
-    @media (max-width: 767px) {
-      /* Styles for phones */
-      body {
-        padding: 20px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      /* Styles for laptops and larger screens */
-      body {
-        padding: 0;
-      }
-
-      .image {
-        max-width: 100%;
+    
+    @media only screen and (max-width: 600px) {
+      #main {
+        position: static;
+        width: auto;
         height: auto;
+      }
+      
+      .image {
+        position: static;
+        transform: none;
       }
     }
   </style>
 </head>
 <body>
-  <div  id="main">
-  <img class="image" src="Untitled-1.png" alt="Monke Image">
+  <div id="main">
+    <img class="image" src="Untitled-1.png" alt="Monke Image">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js"></script>
+  <script>
+    VANTA.TRUNK({
+      el: "#main",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xf0f0f0,
+      backgroundColor: 0x20202,
+      spacing: 0.50,
+      chaos: 4.50
+    })
+  </script>
 </body>
+</html>
 
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js"></script>
-<script>
-VANTA.TRUNK({
-  el: "#main",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0xf0f0f0,
-  backgroundColor: 0x20202,
-  spacing: 0.50,
-  chaos: 4.50
-})
-</script>
 </html>
