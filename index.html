@@ -21,10 +21,50 @@
     .image {
       margin-top: 50px;
     }
+
+    @media (max-width: 767px) {
+      /* Styles for phones */
+      body {
+        padding: 20px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      /* Styles for laptops and larger screens */
+      body {
+        padding: 0;
+      }
+
+      .image {
+        max-width: 100%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
-  
+  <div  id="main">
   <img class="image" src="Untitled-1.png" alt="Monke Image">
 </body>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js"></script>
+<script>
+VANTA.TRUNK({
+  el: "#main",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0xf0f0f0,
+  backgroundColor: 0x20202,
+  spacing: 0.50,
+  chaos: 4.50
+})
+</script>
 </html>
